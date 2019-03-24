@@ -21,6 +21,10 @@ case "$choice" in
    ;;
 2) cp -r /home/$uservar/Documents/* /media/$uservar/ExtraDrive1/Backups/Documents/
    ;;
-3) cp -r /home/$uservar/Pictures/* /media/$uservar/ExtraDrive1/Backups/Pictures/ && cp -r /home/$uservar/Documents/* /media/$uservar/ExtraDrive1/Backups/Documents/
+3) cp -r /home/$uservar/Pictures/* /media/$uservar/ExtraDrive1/Backups/Pictures/ 
+   cp -r /home/$uservar/Documents/* /media/$uservar/ExtraDrive1/Backups/Documents/
    ;;
 esac
+echo "Done backing up those dictories"
+echo "Have a great day!"
+
