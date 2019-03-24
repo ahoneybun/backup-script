@@ -17,12 +17,12 @@ echo "[3] Everything"
 echo "------"
 echo -n "Enter choice: "; read choice
 case "$choice" in
-1) cp -r /home/$uservar/Pictures/* /media/$uservar/ExtraDrive1/Backups/Pictures/
+1) cp -ru /home/$uservar/Pictures/* /media/$uservar/ExtraDrive1/Backups/Pictures/
    ;;
-2) cp -r /home/$uservar/Documents/* /media/$uservar/ExtraDrive1/Backups/Documents/
+2) cp -ru /home/$uservar/Documents/* /media/$uservar/ExtraDrive1/Backups/Documents/
    ;;
-3) cp -r /home/$uservar/Pictures/* /media/$uservar/ExtraDrive1/Backups/Pictures/ 
-   cp -r /home/$uservar/Documents/* /media/$uservar/ExtraDrive1/Backups/Documents/
+3) cp -ru /home/$uservar/Pictures/* /media/$uservar/ExtraDrive1/Backups/Pictures/ 
+   cp -ru /home/$uservar/Documents/* /media/$uservar/ExtraDrive1/Backups/Documents/
    ;;
 esac
 echo "Done backing up those dictories"
