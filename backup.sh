@@ -7,15 +7,17 @@ echo "---------------------------------------------"
 sleep 2
 clear
 
+# Setting the username for path logic
 read -p 'Username: ' uservar
-
 sudo mount /dev/sda1 /media/$uservar/ExtraDrive1
+
 echo "---------------------------"
 echo "Mounting your ExtraDrive1"
 echo "---------------------------"
 sleep 2
 clear
 
+# Selecting which dictories to backup
 echo "Hello $uservar what would you like to backup today?"
 echo "---------------"
 echo "[1] Pictures"
@@ -32,6 +34,8 @@ case "$choice" in
    cp -ru /home/$uservar/Documents/* /media/$uservar/ExtraDrive1/Backups/Documents/
    ;;
 esac
+
+# Exit script
 echo "---------------------------------"
 echo "Done backing up those dictories"
 echo "Have a great day!"
