@@ -8,12 +8,16 @@ sleep 2
 clear
 
 # Setting the username for path logic
+echo "---------------------------------"
+echo "Setting username for path logic"
 read -p 'Username: ' uservar
-sudo mount /dev/sda1 /media/$uservar/ExtraDrive1
+sleep 2
+clear
 
 echo "---------------------------"
 echo "Mounting your ExtraDrive1"
 echo "---------------------------"
+sudo mount /dev/sda1 /media/$uservar/ExtraDrive1
 sleep 2
 clear
 
