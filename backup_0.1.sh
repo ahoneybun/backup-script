@@ -1,6 +1,7 @@
 #!/bin/bash
 # Intro
 # ------
+clear
 echo "---------------------------------------------"
 echo "Welcome to version 0.1 of the Backup Script"
 echo "---------------------------------------------"
@@ -22,8 +23,9 @@ sleep 2
 clear
 
 # Selecting which dictories to backup
+echo "-----------------------------------------------------------"
 echo "Hello $uservar what would you like to backup today?"
-echo "---------------"
+echo "-----------------------------------------------------------"
 echo "[1] Pictures"
 echo "[2] Documents"
 echo "[3] Everything"
