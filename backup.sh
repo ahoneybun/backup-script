@@ -9,6 +9,13 @@ clear
 
 read -p 'Username: ' uservar
 
+sudo mount /dev/sda1 /media/$uservar/ExtraDrive1
+echo "------"
+echo "Mounting your ExtraDrive1"
+echo "------"
+sleep 2
+clear
+
 echo "Hello $uservar what would you like to backup today?"
 echo "------"
 echo "[1] Pictures"
@@ -27,4 +34,6 @@ case "$choice" in
 esac
 echo "Done backing up those dictories"
 echo "Have a great day!"
+sleep 2
+clear
 
