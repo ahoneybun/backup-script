@@ -38,8 +38,7 @@ case "$choice" in
    ;;
 3) cp -ru /home/$uservar/Pictures/* /media/$uservar/ExtraDrive1/Backups/Pictures/ 
    cp -ru /home/$uservar/Documents/* /media/$uservar/ExtraDrive1/Backups/Documents/
-   cp -ru /home/$uservar/.ssh/id_rsa /media/$uservar/ExtraDrive1/Backups/.ssh/
-   cp -ru /home/$uservar/.ssh/id_rsa.pub /media/$uservar/ExtraDrive1/Backups/.ssh/
+   cp -ru /home/$uservar/.ssh/id_rsa* /media/$uservar/ExtraDrive1/Backups/.ssh/
    ;;
 esac
 clear
