@@ -16,9 +16,9 @@ sleep 2
 clear
 
 echo "---------------------------"
-echo "Mounting your ExtraDrive1"
+echo "Mounting your Backup"
 echo "---------------------------"
-sudo mount /dev/sda1 /media/$uservar/ExtraDrive1
+sudo mount /dev/sdb1 /media/$uservar/Backup
 sleep 2
 clear
 
@@ -32,16 +32,16 @@ echo "[3] Everything"
 echo "---------------"
 echo -n "Enter choice: "; read choice
 case "$choice" in
-1) cp -ru /home/$uservar/Pictures/* /media/$uservar/ExtraDrive1/Backups/Pictures/
+1) cp -ru /home/$uservar/Pictures/* /media/$uservar/Backup/Pictures/
    ;;
-2) cp -ru /home/$uservar/Documents/* /media/$uservar/ExtraDrive1/Backups/Documents/
+2) cp -ru /home/$uservar/Documents/* /media/$uservar/Backup/Documents/
    ;;
-3) cp -ru /home/$uservar/Pictures/* /media/$uservar/ExtraDrive1/Backups/Pictures/ 
-   cp -ru /home/$uservar/Documents/* /media/$uservar/ExtraDrive1/Backups/Documents/
-   cp -ru /home/$uservar/.ssh/id_rsa* /media/$uservar/ExtraDrive1/Backups/.ssh/
-   cp -ru /home/$uservar/.config/i3 /media/$uservar/ExtraDrive1/Backups/.config/i3/
-   cp -ru /home/$uservar/.config/i3status /media/$uservar/ExtraDrive1/Backups/.config/i3status/
-   cp -ru /home/$uservar/.config/sway/* /media/$uservar/ExtraDrive1/Backups/.config/sway/
+3) cp -ru /home/$uservar/Pictures/* /media/$uservar/Backup/Pictures/ 
+   cp -ru /home/$uservar/Documents/* /media/$uservar/Backup/Documents/
+   cp -ru /home/$uservar/.ssh/id_rsa* /media/$uservar/Backup/.ssh/
+   cp -ru /home/$uservar/.config/i3 /media/$uservar/Backup/.config/i3/
+   cp -ru /home/$uservar/.config/i3status /media/$uservar/Backup/.config/i3status/
+   cp -ru /home/$uservar/.config/sway/* /media/$uservar/Backups/.config/sway/
    ;;
 esac
 clear
