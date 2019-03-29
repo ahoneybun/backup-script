@@ -28,7 +28,8 @@ echo "Hello $uservar what would you like to backup today?"
 echo "-----------------------------------------------------------"
 echo "[1] Pictures"
 echo "[2] Documents"
-echo "[3] Everything"
+echo "[3] Videos"
+echo "[4] Everything"
 echo "---------------"
 echo -n "Enter choice: "; read choice
 case "$choice" in
@@ -36,8 +37,11 @@ case "$choice" in
    ;;
 2) cp -ru /home/$uservar/Documents/* /media/$uservar/ExtraDrive1/Backups/Documents/
    ;;
-3) cp -ru /home/$uservar/Pictures/* /media/$uservar/ExtraDrive1/Backups/Pictures/ 
+3) cp -ru /home/$uservar/Videos/* /media/$uservar/ExtraDrive1/Backups/Videos/
+   ;;
+4) cp -ru /home/$uservar/Pictures/* /media/$uservar/ExtraDrive1/Backups/Pictures/ 
    cp -ru /home/$uservar/Documents/* /media/$uservar/ExtraDrive1/Backups/Documents/
+   cp -ru /home/$uservar/Videos/* /media/$uservar/ExtraDrive1/Backups/Videos
    cp -ru /home/$uservar/.ssh/id_rsa* /media/$uservar/ExtraDrive1/Backups/.ssh/
    cp -ru /home/$uservar/.config/i3 /media/$uservar/ExtraDrive1/Backups/.config/i3/
    cp -ru /home/$uservar/.config/i3status /media/$uservar/ExtraDrive1/Backups/.config/i3status/
