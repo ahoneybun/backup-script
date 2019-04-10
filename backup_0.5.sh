@@ -15,9 +15,9 @@ read -p 'Username: ' uservar
 sleep 2
 clear
 
-# Setting location
-echo "-----------------------------------"
-echo "Setting location"
+# Setting drive location
+echo "------------------------------------"
+echo "Setting drive location"
 echo "home and media are the most common"
 read -p 'Mount: ' mountvar
 sleep 2
@@ -28,12 +28,12 @@ clear
 #echo "Yes"
 #fi
 
-echo "---------------------------"
-echo "Mounting your ExtraDrive1"
-echo "---------------------------"
-sudo mount /dev/sda1 /media/$uservar/ExtraDrive1
-sleep 2
-clear
+#echo "---------------------------"
+#echo "Mounting your ExtraDrive1"
+#echo "---------------------------"
+#sudo mount /dev/sda1 /media/$uservar/ExtraDrive1
+#sleep 2
+#clear
 
 # Selecting which dictories to backup
 echo "-----------------------------------------------------------"
@@ -52,7 +52,9 @@ case "$choice" in
    ;;
 3) cp -ru /home/$uservar/Videos/* /$mountvar/$uservar/ExtraDrive1/Backups/Videos/
    ;;
-4) cp -ru /home/$uservar/Pictures/* /$mountvar/$uservar/ExtraDrive1/Backups/Pictures/ 
+4) cp -ru /home/$uservar/.ssh/id_rsa* /$mountvar/$uservar/ExtraDrive1/Backups/.ssh/
+   ;;
+5) cp -ru /home/$uservar/Pictures/* /$mountvar/$uservar/ExtraDrive1/Backups/Pictures/ 
    cp -ru /home/$uservar/Documents/* /$mountvar/$uservar/ExtraDrive1/Backups/Documents/
    cp -ru /home/$uservar/Videos/* /$mountvar/$uservar/ExtraDrive1/Backups/Videos
    cp -ru /home/$uservar/.ssh/id_rsa* /$mountvar/$uservar/ExtraDrive1/Backups/.ssh/
