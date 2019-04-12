@@ -1,3 +1,5 @@
+Out of date currently.
+
 Backs up the following directories on each branch:
 - Pictures
 - Documents
