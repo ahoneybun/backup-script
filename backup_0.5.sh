@@ -9,17 +9,17 @@ sleep 2
 clear
 
 # Setting the username for path logic
-echo "---------------------------------"
+echo "------------------------------------------"
 echo "Setting username for path logic"
 read -p 'Username: ' uservar
 sleep 2
 clear
 
-# Setting drive location
-echo "------------------------------------"
+# Setting drive location for path logic
+echo "------------------------------------------"
 echo "Setting drive location"
 echo "home and media are the most common"
-read -p 'Mount: ' mountvar
+read -p 'Mount Point: ' mountvar
 sleep 2
 clear
 
