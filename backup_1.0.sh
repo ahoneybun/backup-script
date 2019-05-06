@@ -3,7 +3,7 @@
 # ------
 clear
 echo "---------------------------------------------"
-echo "Welcome to version 0.1 of the Backup Script"
+echo "Welcome to version 1.0 of the Backup Script"
 echo "---------------------------------------------"
 sleep 2
 clear
@@ -42,6 +42,7 @@ case "$choice" in
 4) cp -ru /home/$uservar/Pictures/* /media/$uservar/Steam-Library/Backups/Pictures/ 
    cp -ru /home/$uservar/Documents/* /media/$uservar/Steam-Library/Backups/Documents/
    cp -ru /home/$uservar/Videos/* /media/$uservar/Steam-Library/Backups/Videos
+   cp -ru /home/$uservar/.bashrc /media/$uservar/Steam-Library/Backups/
    cp -ru /home/$uservar/.ssh/id_rsa* /media/$uservar/Steam-Library/Backups/.ssh/
    cp -ru /home/$uservar/.config/i3 /media/$uservar/Steam-Library/Backups/.config/i3/
    cp -ru /home/$uservar/.config/i3status /media/$uservar/Steam-Library/Backups/.config/i3status/
