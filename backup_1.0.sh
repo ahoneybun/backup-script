@@ -3,7 +3,7 @@
 # ------
 clear
 echo "---------------------------------------------"
-echo "Welcome to version 0.5 of the Backup Script"
+echo "Welcome to version 1.0 of the Backup Script"
 echo "---------------------------------------------"
 sleep 2
 clear
