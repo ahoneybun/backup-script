@@ -39,35 +39,16 @@ clear
 echo "-----------------------------------------------------------"
 echo "Hello $uservar what would you like to backup today?"
 echo "-----------------------------------------------------------"
-echo "[1] Pictures"
-echo "[2] Documents"
-echo "[3] Videos"
-echo "[4] SSH keys"
-echo "[5] i3/sway config files"
-echo "[6] Everything"
+echo "[1] WIP Archive Method"
 echo "---------------"
 echo -n "Enter choice: "; read choice
 case "$choice" in
-1) cp -ru /home/$uservar/Pictures/* /$mountvar/$uservar/ExtraDrive1/Backups/Pictures/
-   ;;
-2) cp -ru /home/$uservar/Documents/* /$mountvar/$uservar/ExtraDrive1/Backups/Documents/
-   ;;
-3) cp -ru /home/$uservar/Videos/* /$mountvar/$uservar/ExtraDrive1/Backups/Videos/
-   ;;
-4) cp -ru /home/$uservar/.ssh/id_rsa* /$mountvar/$uservar/ExtraDrive1/Backups/.ssh/
-   ;;
-5) cp -ru /home/$uservar/.config/i3 /$mountvar/$uservar/ExtraDrive1/Backups/.config/i3/
-   cp -ru /home/$uservar/.config/i3status /$mountvar/$uservar/ExtraDrive1/Backups/.config/i3status/
-   cp -ru /home/$uservar/.config/sway/* /$mountvar/$uservar/ExtraDrive1/Backups/.config/sway/
-   ;;
-6) cp -ru /home/$uservar/Pictures/* /$mountvar/$uservar/ExtraDrive1/Backups/Pictures/ 
-   cp -ru /home/$uservar/Documents/* /$mountvar/$uservar/ExtraDrive1/Backups/Documents/
-   cp -ru /home/$uservar/Videos/* /$mountvar/$uservar/ExtraDrive1/Backups/Videos
-   cp -ru /home/$uservar/.ssh/id_rsa* /$mountvar/$uservar/ExtraDrive1/Backups/.ssh/
-   cp -ru /home/$uservar/.config/i3 /$mountvar/$uservar/ExtraDrive1/Backups/.config/i3/
-   cp -ru /home/$uservar/.config/i3status /$mountvar/$uservar/ExtraDrive1/Backups/.config/i3status/
-   cp -ru /home/$uservar/.config/sway/* /$mountvar/$uservar/ExtraDrive1/Backups/.config/sway/
-   ;;
+1) tar -czvf Pictures.tar.gz /home/$uservar/Pictures/* 
+   mv Pictures.tar.gz /media/$uservar/ExtraDrive1/Backups/
+   tar -czvf Documents.tar.gz /home/$uservar/Documents/* 
+   mv Documents.tar.gz /media/$uservar/ExtraDrive1/Backups/
+   tar -czvf config-files.tar.gz /home/$uservar/.config/* 
+   mv config-files.tar.gz /media/$uservar/ExtraDrive1/Backups/
 esac
 clear
 
