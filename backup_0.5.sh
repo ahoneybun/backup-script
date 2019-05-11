@@ -43,8 +43,8 @@ echo "[1] WIP Archive Method"
 echo "---------------"
 echo -n "Enter choice: "; read choice
 case "$choice" in
-1) tar -czvf "$(date '+%Y-%m-%d').Pictures.tar.gz" /home/$uservar/Pictures/* 
-   mv "$(date '+%Y-%m-%d').Pictures.tar.gz" /media/$uservar/ExtraDrive1/Backups/
+1) tar -czvf Pictures.tar.gz /home/$uservar/Pictures/* 
+   mv Pictures.tar.gz /media/$uservar/ExtraDrive1/Backups/
    tar -czvf Documents.tar.gz /home/$uservar/Documents/* 
    mv Documents.tar.gz /media/$uservar/ExtraDrive1/Backups/
    tar -czvf config-files.tar.gz /home/$uservar/.config/* 
