@@ -24,14 +24,14 @@ sleep 2
 clear
 
 # Testing for automounting
-#if [ findmnt --fstab --evaluate | grep ExtraDrive1 = "ExtraDrive1" ]; then
+#if [ findmnt --fstab --evaluate | grep Backup = "Backup" ]; then
 #echo "Yes"
 #fi
 
 #echo "---------------------------"
-#echo "Mounting your ExtraDrive1"
+#echo "Mounting your Backup"
 #echo "---------------------------"
-#sudo mount /dev/sda1 /media/$uservar/ExtraDrive1
+#sudo mount /dev/sda1 /media/$uservar/Backup
 #sleep 2
 #clear
 
@@ -44,11 +44,11 @@ echo "---------------"
 echo -n "Enter choice: "; read choice
 case "$choice" in
 1) tar -czvf Pictures.tar.gz /home/$uservar/Pictures/* 
-   mv Pictures.tar.gz /media/$uservar/ExtraDrive1/Backups/
+   mv Pictures.tar.gz /media/$uservar/Backup/
    tar -czvf Documents.tar.gz /home/$uservar/Documents/* 
-   mv Documents.tar.gz /media/$uservar/ExtraDrive1/Backups/
+   mv Documents.tar.gz /media/$uservar/Backup/
    tar -czvf config-files.tar.gz /home/$uservar/.config/* 
-   mv config-files.tar.gz /media/$uservar/ExtraDrive1/Backups/
+   mv config-files.tar.gz /media/$uservar/Backup/
 esac
 clear
 
