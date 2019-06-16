@@ -3,7 +3,7 @@
 # ------
 clear
 echo "---------------------------------------------"
-echo "Welcome to version 0.5 of the Backup Script"
+echo "Welcome to version 1.0 of the Backup Script"
 echo "---------------------------------------------"
 sleep 2
 clear
@@ -17,8 +17,8 @@ clear
 
 # Setting drive location for path logic
 echo "------------------------------------------"
-echo "Setting drive location"
-echo "home and media are the most common"
+echo "Setting drive location, home and media are"
+echo "the most common locations"
 read -p 'Mount Point: ' mountvar
 sleep 2
 clear
@@ -39,7 +39,7 @@ clear
 echo "-----------------------------------------------------------"
 echo "Hello $uservar what would you like to backup today?"
 echo "-----------------------------------------------------------"
-echo "[1] WIP Archive Method"
+echo "[1] Archive Method"
 echo "---------------"
 echo -n "Enter choice: "; read choice
 case "$choice" in
