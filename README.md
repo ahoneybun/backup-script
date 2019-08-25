@@ -1,8 +1,5 @@
-Backs up the following directories on each branch:
+Backs up the following directories on this branch:
 - Pictures
 - Documents
-- Videos
-- .ssh
-- i3, i3status
-- sway
+- .config
 
