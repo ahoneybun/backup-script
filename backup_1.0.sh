@@ -9,16 +9,17 @@ sleep 2
 clear
 
 # Setting the username for path logic
-echo "------------------------------------------"
-echo "Setting username for path logic"
-read -p 'Username: ' uservar
-sleep 2
-clear
+#echo "------------------------------------------"
+#echo "Setting username for path logic"
+#read -p 'Username: ' uservar
+#sleep 2
+#clear
 
 # Setting drive location for path logic
 echo "------------------------------------------"
-echo "Setting drive location, home and media are"
-echo "the most common locations"
+echo "Setting drive location home and media are"
+echo "the most common locations, if you're not sure"
+echo "use media as it's the system default on most distros"
 read -p 'Mount Point: ' mountvar
 sleep 2
 clear
@@ -37,18 +38,18 @@ clear
 
 # Selecting which dictories to backup
 echo "-----------------------------------------------------------"
-echo "Hello $uservar what would you like to backup today?"
+echo "Hello $USER what would you like to backup today?"
 echo "-----------------------------------------------------------"
 echo "[1] Archive Method"
-echo "---------------"
+echo "-------------------"
 echo -n "Enter choice: "; read choice
 case "$choice" in
-1) tar -czvf Pictures.tar.gz /home/$uservar/Pictures/* 
-   mv Pictures.tar.gz /media/$uservar/Backup/
-   tar -czvf Documents.tar.gz /home/$uservar/Documents/* 
-   mv Documents.tar.gz /media/$uservar/Backup/
-   tar -czvf config-files.tar.gz /home/$uservar/.config/* 
-   mv config-files.tar.gz /media/$uservar/Backup/
+1) tar -czvf Pictures.tar.gz ~/Pictures/* 
+   mv Pictures.tar.gz /media/$USER/Backup/
+   tar -czvf Documents.tar.gz ~/Documents/* 
+   mv Documents.tar.gz /media/$USER/Backup/
+   tar -czvf config-files.tar.gz ~/.config/* 
+   mv config-files.tar.gz /media/$USER/Backup/
 esac
 clear
 
