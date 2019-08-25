@@ -1,6 +1,7 @@
 #!/bin/bash
-# Intro
-# ------
+# Dead simple backup script written in Bash 
+# By Aaron Honeycutt
+---
 clear
 echo "---------------------------------------------"
 echo "Welcome to version 1.0 of the Backup Script"
@@ -12,13 +13,14 @@ clear
 echo "-----------------------------------------------------------------------------------------"
 echo "Setting drive location home and media are the most common locations, if you're not sure"
 echo "use media as it's the system default on most distros"
+echo "-----------------------------------------------------------------------------------------"
 read -p 'Mount Point: ' mountvar
 sleep 2
 clear
 
 # Selecting which dictories to backup
 echo "-----------------------------------------------------------"
-echo "Hello $USER what would you like to backup today?"
+echo "Hello $USER how would you like to backup today?"
 echo "-----------------------------------------------------------"
 echo "[1] Archive Method"
 echo "-------------------"
