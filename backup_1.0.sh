@@ -8,33 +8,13 @@ echo "---------------------------------------------"
 sleep 2
 clear
 
-# Setting the username for path logic
-#echo "------------------------------------------"
-#echo "Setting username for path logic"
-#read -p 'Username: ' uservar
-#sleep 2
-#clear
-
 # Setting drive location for path logic
-echo "------------------------------------------"
-echo "Setting drive location home and media are"
-echo "the most common locations, if you're not sure"
+echo "-----------------------------------------------------------------------------------------"
+echo "Setting drive location home and media are the most common locations, if you're not sure"
 echo "use media as it's the system default on most distros"
 read -p 'Mount Point: ' mountvar
 sleep 2
 clear
-
-# Testing for automounting
-#if [ findmnt --fstab --evaluate | grep Backup = "Backup" ]; then
-#echo "Yes"
-#fi
-
-#echo "---------------------------"
-#echo "Mounting your Backup"
-#echo "---------------------------"
-#sudo mount /dev/sda1 /media/$uservar/Backup
-#sleep 2
-#clear
 
 # Selecting which dictories to backup
 echo "-----------------------------------------------------------"
