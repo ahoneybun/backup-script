@@ -2,6 +2,10 @@
 # Dead simple backup script written in Bash 
 # By Aaron Honeycutt
 ---
+
+# Defining some variables
+day=$(date +%Y-%m-%d)
+
 clear
 echo "---------------------------------------------"
 echo "Welcome to version 1.0 of the Backup Script"
@@ -26,12 +30,12 @@ echo "[1] Archive Method"
 echo "-------------------"
 echo -n "Enter choice: "; read choice
 case "$choice" in
-1) tar -czvf Pictures.tar.gz ~/Pictures/* 
-   mv Pictures.tar.gz /media/$USER/Backup/
-   tar -czvf Documents.tar.gz ~/Documents/* 
-   mv Documents.tar.gz /media/$USER/Backup/
-   tar -czvf config-files.tar.gz ~/.config/* 
-   mv config-files.tar.gz /media/$USER/Backup/
+1) tar -czvf Pictures-$day.tar.gz ~/Pictures/* 
+   mv Pictures-$day.tar.gz /media/$USER/Backup/
+   tar -czvf Documents-$day.tar.gz ~/Documents/* 
+   mv Documents-$day.tar.gz /media/$USER/Backup/
+   tar -czvf config-files-$day.tar.gz ~/.config/* 
+   mv config-files-$day.tar.gz /media/$USER/Backup/
 esac
 clear
 
