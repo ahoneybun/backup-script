@@ -13,15 +13,6 @@ echo "---------------------------------------------"
 sleep 2
 clear
 
-# Setting drive location for path logic
-echo "-----------------------------------------------------------------------------------------"
-echo "Setting drive location home and media are the most common locations, if you're not sure"
-echo "use media as it's the system default on most distros"
-echo "-----------------------------------------------------------------------------------------"
-read -p 'Mount Point: ' mountvar
-sleep 2
-clear
-
 # Selecting which dictories to backup
 echo "-----------------------------------------------------------"
 echo "Hello $USER how would you like to backup today?"
@@ -31,11 +22,11 @@ echo "-------------------"
 echo -n "Enter choice: "; read choice
 case "$choice" in
 1) tar -czvf Pictures-$day.tar.gz ~/Pictures/* 
-   mv Pictures-$day.tar.gz /media/$USER/Backup/
+   mv Pictures-$day.tar.gz ~/Backup-Drive/
    tar -czvf Documents-$day.tar.gz ~/Documents/* 
-   mv Documents-$day.tar.gz /media/$USER/Backup/
+   mv Documents-$day.tar.gz ~/Backup-Drive/
    tar -czvf config-files-$day.tar.gz ~/.config/* 
-   mv config-files-$day.tar.gz /media/$USER/Backup/
+   mv config-files-$day.tar.gz ~/Backup-Drive/
 esac
 clear
 
