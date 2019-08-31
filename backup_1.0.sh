@@ -28,7 +28,6 @@ case "$choice" in
    tar -czvf config-files-$day.tar.gz ~/.config/* 
    mv config-files-$day.tar.gz ~/Backup-Drive/
 esac
-clear
 
 # Exit script
 echo "---------------------------------"
