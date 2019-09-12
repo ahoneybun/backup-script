@@ -21,12 +21,14 @@ echo "[1] Archive Method"
 echo "-------------------"
 echo -n "Enter choice: "; read choice
 case "$choice" in
-1) tar -czvf Pictures-$day.tar.gz ~/Pictures/* 
-   mv Pictures-$day.tar.gz ~/Backup-Drive/
+1) mkdir ~/Backup-Drive/$day/
+   tar -czvf Pictures-$day.tar.gz ~/Pictures/* 
+   mv Pictures-$day.tar.gz ~/Backup-Drive/$day/
    tar -czvf Documents-$day.tar.gz ~/Documents/* 
-   mv Documents-$day.tar.gz ~/Backup-Drive/
+   mv Documents-$day.tar.gz ~/Backup-Drive/$day/
+   mv ~/Backup-Drive/Documents-$day.tar.gz ~/Backup-Drive/$day/
    tar -czvf config-files-$day.tar.gz ~/.config/* 
-   mv config-files-$day.tar.gz ~/Backup-Drive/
+   mv config-files-$day.tar.gz ~/Backup-Drive/$day/
 esac
 
 # Exit script
