@@ -8,23 +8,9 @@ echo "---------------------------------------------"
 sleep 2
 clear
 
-# Setting the username for path logic
-echo "---------------------------------"
-echo "Setting username for path logic"
-read -p 'Username: ' uservar
-sleep 2
-clear
-
-echo "---------------------------"
-echo "Mounting your Backup"
-echo "---------------------------"
-sudo mount /dev/sdb1 /media/$uservar/Backup
-sleep 2
-clear
-
 # Selecting which dictories to backup
 echo "-----------------------------------------------------------"
-echo "Hello $uservar what would you like to backup today?"
+echo "Hello $USER what would you like to backup today?"
 echo "-----------------------------------------------------------"
 echo "[1] Pictures"
 echo "[2] Documents"
@@ -32,19 +18,15 @@ echo "[3] Everything"
 echo "---------------"
 echo -n "Enter choice: "; read choice
 case "$choice" in
-1) cp -ru /home/$uservar/Pictures/* /media/$uservar/Backup/Pictures/
+1) cp -ru /home/$USER/Pictures/* /media/$USER/Backup/Pictures/
    ;;
-2) cp -ru /home/$uservar/Documents/* /media/$uservar/Backup/Documents/
+2) cp -ru /home/$USER/Documents/* /media/$USER/Backup/Documents/
    ;;
-3) cp -ru /home/$uservar/Pictures/* /media/$uservar/Backup/Pictures/ 
-   cp -ru /home/$uservar/Documents/* /media/$uservar/Backup/Documents/
-   cp -ru /home/$uservar/.ssh/id_rsa* /media/$uservar/Backup/.ssh/
-   cp -ru /home/$uservar/.config/i3 /media/$uservar/Backup/.config/i3/
-   cp -ru /home/$uservar/.config/i3status /media/$uservar/Backup/.config/i3status/
-   cp -ru /home/$uservar/.config/sway/* /media/$uservar/Backups/.config/sway/
+3) cp -ru /home/$USER/Pictures/* /media/$USER/Backup/Pictures/ 
+   cp -ru /home/$USER/Documents/* /media/$USER/Backup/Documents/
+   cp -ru /home/$USER/.ssh/id_rsa* /media/$USER/Backup/.ssh/
    ;;
 esac
-clear
 
 # Exit script
 echo "---------------------------------"
@@ -52,5 +34,4 @@ echo "Done backing up those dictories"
 echo "Have a great day!"
 echo "---------------------------------"
 sleep 2
-clear
 
