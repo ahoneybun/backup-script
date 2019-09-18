@@ -3,7 +3,7 @@
 # ------
 clear
 echo "---------------------------------------------"
-echo "Welcome to version 0.1 of the Backup Script"
+echo "Welcome to version 0.5 of the Backup Script"
 echo "---------------------------------------------"
 sleep 2
 clear
@@ -25,6 +25,7 @@ case "$choice" in
 3) cp -ru /home/$USER/Pictures/* /media/$USER/Backup/Pictures/ 
    cp -ru /home/$USER/Documents/* /media/$USER/Backup/Documents/
    cp -ru /home/$USER/.ssh/id_rsa* /media/$USER/Backup/.ssh/
+   cp -ru /home/$USER/.config /media/$USER/Backup/.config
    ;;
 esac
 
