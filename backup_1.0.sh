@@ -18,6 +18,7 @@ echo "-----------------------------------------------------------"
 echo "Hello $USER how would you like to backup today?"
 echo "-----------------------------------------------------------"
 echo "[1] Archive Method"
+echo "[2] rsync method"
 echo "-------------------"
 echo -n "Enter choice: "; read choice
 case "$choice" in
@@ -29,6 +30,10 @@ case "$choice" in
    mv ~/Backup-Drive/Documents-$day.tar.gz /media/$USER/Backup/$day/
    tar -czvf config-files-$day.tar.gz ~/.config/* 
    mv config-files-$day.tar.gz /media/$USER/Backup/$day/
+   ;;
+2) rsync -av --progress ~/Pictures/ /media/$USER/Backup/Pictures/
+   rsync -av --progress ~/Documents/ /media/$USER/Backup/Documents/
+
 esac
 
 # Exit script
