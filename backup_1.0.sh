@@ -33,6 +33,7 @@ case "$choice" in
    ;;
 2) rsync -av --progress ~/Pictures/ /media/$USER/Backup/Pictures/
    rsync -av --progress ~/Documents/ /media/$USER/Backup/Documents/
+   rsync -av --progress ~/.config/ /media/$USER/Backup/.config/
 
 esac
 
