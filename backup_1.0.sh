@@ -21,6 +21,7 @@ echo "[1] Pictures"
 echo "[2] Documents"
 echo "[3] Videos"
 echo "[4] Everything"
+echo "[5] restic method"
 echo "---------------"
 echo -n "Enter choice: "; read choice
 case "$choice" in
@@ -43,6 +44,9 @@ case "$choice" in
    rsync -av --progress /home/$USER/.config/i3xrocks /media/$USER/Steam-Library/Backups/.config/i3xrocks/
    rsync -av --progress /home/$USER/.config/i3status /media/$USER/Steam-Library/Backups/.config/i3status/
    rsync -av --progress /home/$USER/.config/sway/* /media/$USER/Steam-Library/Backups/.config/sway/
+   ;;
+5) sudo restic -r 
+   
 esac
 
 # Exit script
