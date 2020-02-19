@@ -19,6 +19,7 @@ echo "Hello $USER how would you like to backup today?"
 echo "-----------------------------------------------------------"
 echo "[1] Archive Method"
 echo "[2] rsync method"
+echo "[3] restic method"
 echo "-------------------"
 echo -n "Enter choice: "; read choice
 case "$choice" in
@@ -34,7 +35,8 @@ case "$choice" in
 2) rsync -av --progress ~/Pictures/ /media/$USER/Backup/Pictures/
    rsync -av --progress ~/Documents/ /media/$USER/Backup/Documents/
    rsync -av --progress ~/.config/ /media/$USER/Backup/.config/
-
+   ;;
+3) sudo restic -r /media/aaronh/Backup/ backup .
 esac
 
 # Exit script
