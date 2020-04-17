@@ -1,6 +1,8 @@
 #!/bin/bash
 # Intro
 
+$id
+
 echo "------------------------------------------------------"
 echo "Hello $USER what would you like to do today?"
 echo "------------------------------------------------------"
@@ -20,3 +22,14 @@ case "$choice" in
 3) sudo restic -r /media/aaronh/Backup/ snapshots
 esac
 
+echo "------------------------------------------------------"
+echo "Which snapshot do you want to remove?"
+echo "------------------------------------------------------"
+
+echo -n "Enter choice: "; read choice2
+case "$choice2" in 
+
+$id) echo "Removing ID $id"
+sudo restic -r /media/aaronh/Backup/ forget $id
+   ;;
+esac
