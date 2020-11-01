@@ -13,10 +13,10 @@ print("----------------------------------------------------")
 
 # backing up Documents
 docs = tarfile.open("docs.tar.gz","w:gz")
-docs.add("/home/aaronh/Documents/recovery-key.txt")
+docs.add("/home/aaronh/Documents/*")
 docs.close()
 
 # backing up Pictures
 pics = tarfile.open("pics.tar.gz","w:gz")
-pics.add("/home/aaronh/Pictures/")
+pics.add("/home/aaronh/Pictures/*")
 pics.close()
