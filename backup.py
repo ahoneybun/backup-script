@@ -7,12 +7,16 @@ import tarfile
 # Setting some variable
 version = 0.2
 
-#print(kernel)
-
-print("----------------------------------------------")
+print("----------------------------------------------------")
 print("Welcome to version", version, "of the backup tool")
-print("----------------------------------------------")
+print("----------------------------------------------------")
 
+# backing up Documents
 docs = tarfile.open("docs.tar.gz","w:gz")
-docs.add("/home/aaronh/Documents/*")
+docs.add("/home/aaronh/Documents/recovery-key.txt")
 docs.close()
+
+# backing up Pictures
+pics = tarfile.open("pics.tar.gz","w:gz")
+pics.add("/home/aaronh/Pictures/")
+pics.close()
