@@ -1,7 +1,18 @@
 #!/usr/python3
 
-# Setting some variable
-#day = date +%Y-%m-%d
+import os
+import sys
+import tarfile
 
-#print(day)
-print("Hello World")
+# Setting some variable
+kernel = os.uname()
+
+#print(kernel)
+
+print("----------------------------------------------")
+print("Welcome to version 1.0 of the backup tool")
+print("----------------------------------------------")
+
+docs = tarfile.open("docs.tar.gz","w:gz")
+docs.add("/home/aaronh/Documents/*")
+docs.close()
