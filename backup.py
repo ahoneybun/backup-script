@@ -5,12 +5,12 @@ import sys
 import tarfile
 
 # Setting some variable
-kernel = os.uname()
+version = 0.2
 
 #print(kernel)
 
 print("----------------------------------------------")
-print("Welcome to version 1.0 of the backup tool")
+print("Welcome to version", version, "of the backup tool")
 print("----------------------------------------------")
 
 docs = tarfile.open("docs.tar.gz","w:gz")
