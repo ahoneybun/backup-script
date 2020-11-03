@@ -1,7 +1,5 @@
 #!/usr/python3
 
-import tarfile
-import subprocess
 import os
 
 # Setting some variable
