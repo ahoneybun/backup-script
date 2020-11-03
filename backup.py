@@ -2,6 +2,7 @@
 
 import tarfile
 import subprocess
+import os
 
 # Setting some variable
 version = 0.2
@@ -11,23 +12,13 @@ print("Welcome to version", version, "of the backup tool")
 print("----------------------------------------------------")
 
 # backing up Documents
-docs = tarfile.open("docs.tar.gz","w:gz")
-docs.add("/home/aaronh/Documents/", filter=None)
-docs.close()
-
-# moving Documents
-subprocess.call(["mv", "docs.tar.gz", "/home/aaronh/ExtraDrive"])
+os.system("mkdir -p /home/aaronh/ExtraDrive/Backups/Documents/")
+os.system("rsync -avrz /home/aaronh/Documents/* /home/aaronh/ExtraDrive/Backups/Documents/")
 
 # backing up Pictures
-pics = tarfile.open("pics.tar.gz","w:gz")
-pics.add("/home/aaronh/Pictures/", filter=None)
-pics.close()
-
-subprocess.call(["mv", "pics.tar.gz", "/home/aaronh/ExtraDrive"])
+os.system("mkdir -p /home/aaronh/ExtraDrive/Backups/Pictures/")
+os.system("rsync -avrz /home/aaronh/Pictures/* /home/aaronh/ExtraDrive/Backups/Pictures/")
 
 # backing up Music
-tunes = tarfile.open("tunes.tar.gz","w:gz")
-tunes.add("/home/aaronh/Music/", filter=None)
-tunes.close()
-
-subprocess.call(["mv", "tunes.tar.gz", "/home/aaronh/ExtraDrive"])
+os.system("mkdir -p /home/aaronh/ExtraDrive/Backups/Music/")
+os.system("rsync -avrz /home/aaronh/Music/* /home/aaronh/ExtraDrive/Backups/Music/")
