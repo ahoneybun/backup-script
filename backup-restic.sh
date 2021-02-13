@@ -11,6 +11,7 @@ echo "[0] Create SFTP backup with Pi4"
 echo "[1] Backup Pictures, Documents, Videos directories"
 echo "[1a] Backup Pictures, Documents, Videos directories Pi4"
 echo "[2] Backup all of your home directory"
+echo "[2a] Backup all of your home directory Pi4"
 echo "[3] View snapshots"
 echo "[4] Remove snapshots"
 
@@ -30,6 +31,9 @@ case "$choice" in
 2) sudo restic -r /media/aaronh/ExtraDrive/Backup/ backup ~/.
    exit 1
    ;;
+2a) sudo restic -r sftp:pi@10.0.0.77:/home/pi/Backups/galp3-b_restic backup ~/.
+    exit 1
+    ;;
 3) sudo restic -r /media/aaronh/ExtraDrive/Backup/ snapshots
    exit 1
    ;;
