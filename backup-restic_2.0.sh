@@ -24,36 +24,69 @@ select_snap () {
    echo ""
 }
 
-submenu_sftp () {
-    local PS3='Select SFTP option: '
-    local option=("Create Repo" "View Snapshots" "Delete Snapshot")
-    local opt
-    select opt in "${options[@]}"
-    do
-       case $opt in 
-        "Create Repo")
-            server_repo
-            restic -r sftp:$serverInfo:$serverFolder init
-            echo ""
-            echo "What folders would you like to backup?"
-            read serverSource
-            echo ""
-            restic -r sftp:$serverInfo:$serverFolder --verbose backup $serverSource
-            ;;
-        "View Snapshots")
-           server_repo
-           ;;
-        esac
-    done
-}
+echo "------------------------------------------------------"
+echo "Hello $USER what would you like to do today?"
+echo "------------------------------------------------------"
 
-PS3='Select restic repo method: '
-options=("SFTP" "Local")
-select opt in "${options[@]}"
-do 
-   case $opt in 
-      "SFTP")
-         submenu_sftp
-         ;;
-    esac
-done
+echo ""
+echo "Be sure to use full paths"
+echo ""
+
+echo "[1] Manage SFTP repo"
+echo "[2] Manage local repo"
+
+echo "------------------------------------------------------"
+echo -n "Enter choice: "; read choice
+case "$choice" in
+
+    if [ $choice = 1 ]; then
+        echo "[1] Create SFTP backup"
+        echo "------------------------------------------------------"
+        echo -n "Enter choice: "; read sftp
+        case "$sftp" in
+
+    if [ $choice = 2 ]; then
+        echo "[1] Create local backup"
+        echo "------------------------------------------------------"
+        echo -n "Enter choice: "; read local
+        case "$local" in
+
+0) server_repo
+   restic -r sftp:$serverInfo:$serverFolder init
+   echo ""
+   echo "What folders would you like to backup?"
+   read serverSource
+   echo ""
+   restic -r sftp:$serverInfo:$serverFolder --verbose backup $serverSource
+   ;;
+
+1) server_repo
+   restic -r sftp:$serverInfo:$serverFolder snapshots
+   ;;
+
+2) server_repo
+   restic -r sftp:$serverInfo:$serverFolder snapshots
+   select_snap
+   restic -r sftp:$serverInfo:$serverFolder forget $snapPick
+   ;;
+
+3) local_repo
+   restic init --repo $localInfo
+   echo ""
+   echo "What folders would you like to backup?"
+   read localSource
+   echo ""
+   restic -r $localInfo --verbose backup $localSource
+   ;;
+
+4) local_repo
+   restic -r $localInfo snapshots
+   ;;
+
+5) local_repo
+   restic -r $localInfo snapshots
+   select_snap
+   restic -r $localInfo forget $snapPick
+   ;;
+
+esac
