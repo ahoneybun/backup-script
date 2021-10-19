@@ -7,6 +7,10 @@ echo "------------------------------------------------------"
 echo "Hello $USER what would you like to do today?"
 echo "------------------------------------------------------"
 
+echo ""
+echo "Be sure to use full paths"
+echo ""
+
 echo "[0] Create SFTP backup"
 echo "[1] Create local backup"
 echo "[3] View snapshots"
@@ -24,6 +28,11 @@ case "$choice" in
    read serverFolder
    echo ""
    restic -r sftp:$serverInfo:$serverFolder init
+   echo ""
+   echo "What folders would you like to backup?"
+   read serverSource
+   echo ""
+   restic -r sftp:$serverInfo:$serverFolder --verbose backup $serverSource
    exit 1
    ;;
 1) echo ""
@@ -31,6 +40,11 @@ case "$choice" in
    read localInfo
    echo ""
    restic init --repo $localInfo
+   echo ""
+   echo "What folders would you like to backup?"
+   read localSource
+   echo ""
+   restic -r $localInfo --verbose backup $localSource
    exit 1
    ;;
 3) echo ""
