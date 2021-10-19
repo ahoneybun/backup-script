@@ -1,20 +1,4 @@
 #!/bin/bash
-# Intro
-
-$id
-
-echo "------------------------------------------------------"
-echo "Hello $USER what would you like to do today?"
-echo "------------------------------------------------------"
-
-echo ""
-echo "Be sure to use full paths"
-echo ""
-
-echo "[0] Create SFTP backup"
-echo "[1] Create local backup"
-echo "[2] Manage SFTP repository"
-echo "[3] Manage local repostory"
 
 server_repo () {
    echo ""
@@ -33,6 +17,29 @@ local_repo () {
    echo ""
 }
 
+select_snap () {
+   echo ""
+   echo "Which snapshot do you want to forget?"
+   read snapPick
+   echo ""
+}
+
+echo "------------------------------------------------------"
+echo "Hello $USER what would you like to do today?"
+echo "------------------------------------------------------"
+
+echo ""
+echo "Be sure to use full paths"
+echo ""
+
+echo "[0] Create SFTP backup"
+echo "[1] View SFTP snapshots"
+echo "[2] Forget SFTP snapshot"
+echo ""
+echo "[3] Create local backup"
+echo "[4] View local snapshots"
+echo "[5] Forget local snapshot"
+
 echo "------------------------------------------------------"
 echo -n "Enter choice: "; read choice
 case "$choice" in
@@ -46,7 +53,17 @@ case "$choice" in
    restic -r sftp:$serverInfo:$serverFolder --verbose backup $serverSource
    ;;
 
-1) local_repo
+1) server_repo
+   restic -r sftp:$serverInfo:$serverFolder snapshots
+   ;;
+
+2) server_repo
+   restic -r sftp:$serverInfo:$serverFolder snapshots
+   select_snap
+   restic -r sftp:$serverInfo:$serverFolder forget $snapPick
+   ;;
+
+3) local_repo
    restic init --repo $localInfo
    echo ""
    echo "What folders would you like to backup?"
@@ -55,12 +72,14 @@ case "$choice" in
    restic -r $localInfo --verbose backup $localSource
    ;;
 
-2) server_repo
-   restic -r sftp:$serverInfo:$serverFolder snapshots
+4) local_repo
+   restic -r $localInfo snapshots
    ;;
 
-3) local_repo
+5) local_repo
    restic -r $localInfo snapshots
+   select_snap
+   restic -r $localInfo forget $snapPick
    ;;
 
 esac
