@@ -52,7 +52,7 @@ case "$choice" in
 3) server_repo
    restic -r sftp:$serverInfo:$serverFolder snapshots
    delete_snap
-   restic -r sftp:$serverInfo:$serverFolder forget $snapPick
+   restic -r sftp:$serverInfo:$serverFolder forget $snapDelete
    ;;
 
 esac
