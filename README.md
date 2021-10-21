@@ -1,4 +1,7 @@
-Branches:
-- workstation-s76 : is my work desktop at system76
-- workstation-home : is my personal desktop at home
-- laptop-galp3 : is my personal laptop (Galago Pro)
+# Basic Restic TUI
+
+Does the following:
+- Create init SFTP repo, creates new snapshot, view snapshots, deletes snapshots
+- Create local repo, creates new snapshot, view snapshots, deletes snapshots
+
+For more info on Restic go [here[(https://restic.net/)
