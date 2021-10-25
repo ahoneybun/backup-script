@@ -70,7 +70,7 @@ case "$choice" in
    restore_snap
    restore_location
    restic -r sftp:$serverInfo:$serverFolder restore $snapRestore --target $snapLocation
-
+   ;;
 4) server_repo
    restic -r sftp:$serverInfo:$serverFolder snapshots
    delete_snap
