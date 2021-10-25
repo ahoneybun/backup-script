@@ -13,6 +13,20 @@ create_snap () {
    echo ""
 }
 
+restore_snap () {
+   echo ""
+   echo "What snapsnot do you want to restore?"
+   read snapRestore
+   echo ""
+}
+
+restore_location () {
+   echo ""
+   echo "Where do you want to restore the snapshot?"
+   read snapLocation
+   echo ""
+}
+
 delete_snap () {
    echo ""
    echo "Which snapshot do you want to forget?"
@@ -23,7 +37,8 @@ delete_snap () {
 echo "[0] Create local backup"
 echo "[1] Create new local snapshot"
 echo "[2] View local snapshots"
-echo "[3] Forget local snapshot"
+echo "[3] Restore local snapshot"
+echo "[4] Forget local snapshot"
 echo ""
 
 echo "------------------------------------------------------"
@@ -41,11 +56,18 @@ case "$choice" in
    restic -r $localInfo --verbose backup $snapCreate
    ;;
 
-1) local_repo
+2) local_repo
    restic -r $localInfo snapshots
    ;;
 
-2) local_repo
+3) local_repo
+   restic -r $localInfo snapshots
+   restore_snap
+   restore_location
+   restic -r $localInfo restore $snapRestore --target $snapLocation
+   ;;
+
+4) local_repo
    restic -r $localInfo snapshots
    delete_snap
    restic -r $localInfo forget --prune $snapDelete
