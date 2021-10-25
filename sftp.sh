@@ -11,8 +11,23 @@ server_repo () {
 }
 
 create_snap () {
+   echo ""
    echo "What folder do you want to backup?"
    read snapCreate
+   echo ""
+}
+
+restore_snap () {
+   echo ""
+   echo "What snapsnot do you want to restore?"
+   read snapRestore
+   echo ""
+}
+
+restore_location () {
+   echo ""
+   echo "Where do you want to restore the snapshot?"
+   read snapLocation
    echo ""
 }
 
@@ -27,7 +42,8 @@ echo ""
 echo "[0] Create SFTP backup"
 echo "[1] Create new SFTP snapshot"
 echo "[2] View SFTP snapshots"
-echo "[3] Forget SFTP snapshot"
+echo "[3] Restore SFTP snapshot"
+echo "[4] Forget SFTP snapshot"
 echo ""
 
 echo "------------------------------------------------------"
@@ -50,6 +66,12 @@ case "$choice" in
    ;;
 
 3) server_repo
+   restic -r sftp:$serverInfo:$serverFolder snapshots
+   restore_snap
+   restore_location
+   restic -r sftp:$serverInfo:$serverFolder restore $snapRestore --target $snapLocation
+
+4) server_repo
    restic -r sftp:$serverInfo:$serverFolder snapshots
    delete_snap
    restic -r sftp:$serverInfo:$serverFolder forget --prune $snapDelete
