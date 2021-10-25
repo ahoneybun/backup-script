@@ -48,5 +48,5 @@ case "$choice" in
 2) local_repo
    restic -r $localInfo snapshots
    delete_snap
-   restic -r $localInfo forget $snapDelete
+   restic -r $localInfo forget --prune $snapDelete
    ;;
