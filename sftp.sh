@@ -11,7 +11,6 @@ server_repo () {
 }
 
 create_snap () {
-   echo ""
    echo "What folder do you want to backup?"
    read snapCreate
    echo ""
@@ -25,7 +24,6 @@ restore_snap () {
 }
 
 restore_location () {
-   echo ""
    echo "Where do you want to restore the snapshot?"
    read snapLocation
    echo ""

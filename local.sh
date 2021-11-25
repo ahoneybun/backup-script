@@ -8,6 +8,7 @@ local_repo () {
 }
 
 create_snap () {
+   echo ""
    echo "What folder do you want to backup?"
    read snapCreate
    echo ""
