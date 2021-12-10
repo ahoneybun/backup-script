@@ -73,3 +73,5 @@ case "$choice" in
    delete_snap
    restic -r $localInfo forget --prune $snapDelete
    ;;
+
+esac
