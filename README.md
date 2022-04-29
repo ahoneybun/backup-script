@@ -1,7 +1,15 @@
 # Basic Restic TUI
 
 Does the following:
-- Create init SFTP repo, creates new snapshot, view snapshots, deletes snapshots
-- Create local repo, creates new snapshot, view snapshots, deletes snapshots
+- SFTP 
+  - Create repo
+  - Creates new snapshot
+  - View snapshots
+  - Deletes snapshots
+- Local
+  - Create repo, 
+  - Creates new snapshot
+  - View snapshots
+  - Deletes snapshots
 
 For more info on Restic go [here](https://restic.net/)
