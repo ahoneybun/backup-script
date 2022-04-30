@@ -7,7 +7,7 @@ Does the following:
   - View snapshots
   - Deletes snapshots
 - Local
-  - Create repo, 
+  - Create repo
   - Creates new snapshot
   - View snapshots
   - Deletes snapshots
