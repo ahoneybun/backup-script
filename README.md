@@ -12,4 +12,4 @@ Does the following:
   - View snapshots
   - Deletes snapshots
 
-For more info on Restic go [here](https://restic.net/)
+For more information about Restic visit [here](https://restic.net/).
