@@ -9,14 +9,14 @@ local_repo () {
 
 create_snap () {
    echo ""
-   echo "What folder do you want to backup?"
+   echo "What folder(s) do you want to backup? Use a space between folders if backing up more then one" 
    read snapCreate
    echo ""
 }
 
 restore_snap () {
    echo ""
-   echo "What snapsnot do you want to restore?"
+   echo "Which snapsnot do you want to restore?"
    read snapRestore
    echo ""
 }
