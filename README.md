@@ -5,11 +5,11 @@ Does the following:
   - Create repo
   - Creates new snapshot
   - View snapshots
-  - Deletes snapshots
+  - Deletes snapshots (prunes as well)
 - Local
   - Create repo
   - Creates new snapshot
   - View snapshots
-  - Deletes snapshots
+  - Deletes snapshots (prunes as well)
 
 For more information about Restic visit [here](https://restic.net/).
