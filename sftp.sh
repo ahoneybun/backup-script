@@ -1,7 +1,6 @@
 #!/bin/bash
 
 userName=$(echo $USER)
-echo $userName
 
 server_repo () {
    echo ""
