@@ -1,5 +1,8 @@
 #!/bin/bash
 
+userName=$(echo $USER)
+echo $userName
+
 server_repo () {
    echo ""
    echo "What is the user@hostname for the server?"
@@ -37,11 +40,12 @@ delete_snap () {
 }
 
 echo ""
-echo "[0] Create SFTP backup"
-echo "[1] Create new SFTP snapshot"
-echo "[2] View SFTP snapshots"
-echo "[3] Restore SFTP snapshot"
-echo "[4] Forget SFTP snapshot"
+echo "[0] Create backup"
+echo "[1] Create new snapshot"
+echo "[1a] Create new snaphot of home directory"
+echo "[2] View snapshots"
+echo "[3] Restore snapshot"
+echo "[4] Forget napshot"
 echo ""
 
 echo "------------------------------------------------------"
@@ -58,6 +62,11 @@ case "$choice" in
    create_snap
    restic -r sftp:$serverInfo:$serverFolder --verbose backup $snapCreate
    ;;
+
+1a) server_repo
+    create_snap
+    restic -r sftp:$serverInfo:$serverFolder --verbose backup $snapCreate --exclude /home/aaronh/.local/share/Steam 
+    ;;
 
 2) server_repo
    restic -r sftp:$serverInfo:$serverFolder snapshots
