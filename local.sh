@@ -8,7 +8,6 @@ local_repo () {
 }
 
 create_snap () {
-   echo ""
    echo "What folder(s) do you want to backup? Use a space between folders if backing up more then one" 
    read snapCreate
    echo ""
@@ -35,11 +34,11 @@ delete_snap () {
    echo ""
 }
 
-echo "[0] Create local backup"
-echo "[1] Create new local snapshot"
-echo "[2] View local snapshots"
-echo "[3] Restore local snapshot"
-echo "[4] Forget local snapshot"
+echo "[0] Create backup"
+echo "[1] Create new snapshot"
+echo "[2] View snapshots"
+echo "[3] Restore snapshot"
+echo "[4] Forget snapshot"
 echo ""
 
 echo "------------------------------------------------------"
