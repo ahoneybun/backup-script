@@ -53,7 +53,7 @@ case "$choice" in
 
 0) server_repo
    restic -r sftp:$serverInfo:$serverFolder init
-   snapCreate
+   create_snap
    restic -r sftp:$serverInfo:$serverFolder --verbose backup $snapCreate
    ;;
 
