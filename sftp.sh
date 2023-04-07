@@ -43,7 +43,7 @@ echo "[0] Create backup"
 echo "[1] Create new snaphot of home directory"
 echo "[2] View snapshots"
 echo "[3] Restore snapshot"
-echo "[4] Forget napshot"
+echo "[4] Forget snapshot"
 echo ""
 
 echo "------------------------------------------------------"
