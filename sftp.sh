@@ -40,8 +40,7 @@ delete_snap () {
 
 echo ""
 echo "[0] Create backup"
-echo "[1] Create new snapshot"
-echo "[1a] Create new snaphot of home directory"
+echo "[1] Create new snaphot of home directory"
 echo "[2] View snapshots"
 echo "[3] Restore snapshot"
 echo "[4] Forget napshot"
@@ -58,11 +57,6 @@ case "$choice" in
    ;;
 
 1) server_repo
-   create_snap
-   restic -r sftp:$serverInfo:$serverFolder --verbose backup $snapCreate
-   ;;
-
-1a) server_repo
     create_snap
     restic -r sftp:$serverInfo:$serverFolder --verbose backup $snapCreate --exclude /home/aaronh/.local/share/Steam 
     ;;

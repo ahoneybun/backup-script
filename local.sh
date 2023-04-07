@@ -53,7 +53,7 @@ case "$choice" in
 
 1) local_repo
    create_snap
-   restic -r $localInfo --verbose backup $snapCreate
+   restic -r $localInfo --verbose backup $snapCreate --exclude /home/aaronh/.local/share/Steam
    ;;
 
 2) local_repo
