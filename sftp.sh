@@ -44,7 +44,7 @@ echo "[1] Create new snapshot"
 echo "[1a] Create new snaphot of home directory"
 echo "[2] View snapshots"
 echo "[3] Restore snapshot"
-echo "[4] Forget napshot"
+echo "[4] Forget snapshot"
 echo ""
 
 echo "------------------------------------------------------"
