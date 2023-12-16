@@ -8,7 +8,7 @@ local_repo () {
 }
 
 create_snap () {
-   echo "What folder(s) do you want to backup? Use a space between folders if backing up more then one" 
+   echo "What folder(s) or file(s) do you want to backup? Use a space between folders if backing up more then one" 
    read snapCreate
    echo ""
 }
@@ -40,8 +40,8 @@ echo "[2] View snapshots"
 echo "[3] Restore snapshot"
 echo "[4] Forget snapshot"
 echo ""
-
 echo "------------------------------------------------------"
+echo ""
 echo -n "Enter choice: "; read choice
 case "$choice" in
 
