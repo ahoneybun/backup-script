@@ -4,34 +4,28 @@ local_repo () {
    echo ""
    echo "What is the destination of the repo?"
    read localInfo
-   echo ""
 }
 
 create_snap () {
    echo "What folder(s) or file(s) do you want to backup? Use a space between folders if backing up more then one" 
    read snapCreate
-   echo ""
 }
 
 restore_snap () {
    echo ""
    echo "Which snapsnot do you want to restore?"
    read snapRestore
-   echo ""
 }
 
 restore_location () {
    echo ""
    echo "Where do you want to restore the snapshot?"
    read snapLocation
-   echo ""
 }
 
 delete_snap () {
-   echo ""
    echo "Which snapshot do you want to forget?"
    read snapDelete
-   echo ""
 }
 
 echo "[0] Create backup"
