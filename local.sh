@@ -28,14 +28,15 @@ delete_snap () {
    read snapDelete
 }
 
-echo "[0] Create backup"
-echo "[1] Create new snapshot"
+echo ""
+echo "[0] Create new repository"
+echo "[1] Create new snaphot"
 echo "[2] View snapshots"
 echo "[3] Restore snapshot"
 echo "[4] Forget snapshot"
 echo ""
+
 echo "------------------------------------------------------"
-echo ""
 echo -n "Enter choice: "; read choice
 case "$choice" in
 
