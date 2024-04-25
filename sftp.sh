@@ -39,8 +39,8 @@ delete_snap () {
 }
 
 echo ""
-echo "[0] Create backup"
-echo "[1] Create new snaphot of home directory"
+echo "[0] Create new repository"
+echo "[1] Create new snaphot"
 echo "[2] View snapshots"
 echo "[3] Restore snapshot"
 echo "[4] Forget snapshot"
@@ -71,6 +71,7 @@ case "$choice" in
    restore_location
    restic -r sftp:$serverInfo:$serverFolder restore $snapRestore --target $snapLocation
    ;;
+   
 4) server_repo
    restic -r sftp:$serverInfo:$serverFolder snapshots
    delete_snap
