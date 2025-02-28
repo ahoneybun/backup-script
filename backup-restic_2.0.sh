@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 echo "------------------------------------------------------"
 echo "Hello $USER what would you like to do today?"
